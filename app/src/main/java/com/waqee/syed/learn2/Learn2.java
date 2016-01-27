@@ -1,6 +1,8 @@
 package com.waqee.syed.learn2;
 
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,8 +70,23 @@ public class Learn2 extends AppCompatActivity {
     }
 
     public void btOnclick(View v){
+        /* for opening new actitvity in same app
         /*if (v.getId()==R.id.bt1){*/
-        Log.d("Syed", "Button Clicked"); /*}*/
+        /*Log.d("Syed", "Button Clicked"); *//*}*//*
+        Intent i = new Intent(this, Activity2.class);
+        startActivity(i);
+        -------------*/
+        /* for opening default maps app with available coordinates
+        Intent i = null;
+        i=new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("geo:19.7,47.7"));
+        startActivity(i);
+        -------------*/
+        Intent i = null, chooser = null;
+        i= new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("geo:19.7,47.7"));
+        chooser=Intent.createChooser(i, "Choose an App");
+        startActivity(chooser);
     }
 
    /* public void etclicked(View v){
