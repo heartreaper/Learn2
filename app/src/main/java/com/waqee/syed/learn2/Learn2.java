@@ -65,7 +65,9 @@ public class Learn2 extends AppCompatActivity {
             Log.d("Syed", "Portrait");
         }
         else if (newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
-            Log.d("Syed", "Landscape");
+            Intent i = new Intent(this, Activity2.class);
+            startActivity(i);
+            Log.d("Syed", "Landscape + Activity 2 Opened");
         }
     }
 
