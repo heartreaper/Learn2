@@ -70,6 +70,7 @@ public class Learn2 extends AppCompatActivity {
     }
 
     public void btOnclick(View v){
+        Intent i = null, chooser = null;
         /* for opening new actitvity in same app
         /*if (v.getId()==R.id.bt1){*/
         /*Log.d("Syed", "Button Clicked"); *//*}*//*
@@ -82,11 +83,24 @@ public class Learn2 extends AppCompatActivity {
         i.setData(Uri.parse("geo:19.7,47.7"));
         startActivity(i);
         -------------*/
+        /* for opening maps app with choose an app dialog
         Intent i = null, chooser = null;
         i= new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse("geo:19.7,47.7"));
         chooser=Intent.createChooser(i, "Choose an App");
         startActivity(chooser);
+        --------------*/
+        /* for opening market app with choose an app dialog with known app link
+        i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("market://details?id=dolphin.developers.com")); just need to start link from details and add "market://"
+        chooser=Intent.createChooser(i,"Choose Market");
+        startActivity(chooser);
+        --------------*/
+        /* for opening email app*/
+        i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("http://dalointl.com")); /*just need to start link from details and add "market://"*/
+        chooser=Intent.createChooser(i,"Choose Email app");
+        startActivity(i);
     }
 
    /* public void etclicked(View v){
